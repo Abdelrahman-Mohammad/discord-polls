@@ -59,7 +59,7 @@ _Examples can be found in [/test](https://github.com/Abdelrahman-Mohammad/discor
 Starts a new poll.
 
 ```js
-Polls.startPoll(<Interaction - Discord.Interaction>, <ForumHeader - String | "New Forum">, <ForumTitleLabel - String | "Title">, <ForumDescriptionLabel - String | "Description">);
+Polls.startPoll(<Interaction - Discord.Interaction>, <Title - String>, <Choices - Array>, <Duration - Number>, <EmbedColor - String>, <EmojiList - Array>, <ForceEndPollEmoji - String>);
 ```
 
 - Output:

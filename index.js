@@ -45,14 +45,18 @@ class DiscordPolls {
         embeds: [embedBuilderError("Channel is inaccessible.")],
         ephemeral: true,
       });
-    if (!title)
+    if (!title || typeof title !== "string")
       return interaction.reply({
-        embeds: [embedBuilderError("Poll title is not given.")],
+        embeds: [
+          embedBuilderError("Poll title is not given or invalid title."),
+        ],
         ephemeral: true,
       });
-    if (!choices)
+    if (!choices || typeof choices !== "object")
       return interaction.reply({
-        embeds: [embedBuilderError("Poll choices are not given.")],
+        embeds: [
+          embedBuilderError("Poll choices are not given or invalid choices."),
+        ],
         ephemeral: true,
       });
     if (choices.length < 2)
@@ -65,6 +69,11 @@ class DiscordPolls {
         embeds: [
           embedBuilderError(`The provided choices are more than the emojis.`),
         ],
+        ephemeral: true,
+      });
+    if (typeof duration !== "number")
+      return interaction.reply({
+        embeds: [embedBuilderError(`Invalid number.`)],
         ephemeral: true,
       });
     !embedColor ? (embedColor = "#202225") : embedColor;
