@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "discord.js": "^14.5.0"
+  },
+  "name": "discord-polls",
+  "description": "discord-polls is a powerfull npm package that lets you make a quick poll message in a channel. Based on discord.js-poll-embed",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdelrahman-Mohammad/discord-polls.git"
+  },
+  "author": "Abdelrahman Abdelaal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abdelrahman-Mohammad/discord-polls/issues"
+  },
+  "homepage": "https://github.com/Abdelrahman-Mohammad/discord-polls#readme"
+}
