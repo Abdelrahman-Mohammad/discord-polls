@@ -6,7 +6,7 @@ discord-polls is a powerfull npm package that lets you make a quick poll message
 <p align="center"><img src="https://img.shields.io/npm/v/discord-polls"> <img src="https://img.shields.io/github/repo-size/Abdelrahman-Mohammad/discord-polls"> <img src="https://img.shields.io/npm/l/discord-polls"> <img src="https://img.shields.io/github/contributors/Abdelrahman-Mohammad/discord-polls"> <img src="https://img.shields.io/github/package-json/dependency-version/Abdelrahman-Mohammad/discord-polls/mongoose">
   <a href="https://discord.gg/rk7cVyk"><img src="https://discordapp.com/api/guilds/753938142246994031/widget.png" alt="Discord server"/></a></p>
 
-![discord-polls picture](./demo.png)
+![discord-polls picture](https://i.ibb.co/b7RXWBF/discord-polls-demo-final.png)
 
 **DISCLAIMER:**
 
