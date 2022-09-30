@@ -31,6 +31,7 @@ npm update discord-polls
 
 # Changelog
 
+- **30 Sept, 2022** (v1.1.1) - Added test folder.
 - **30 Sept, 2022** (v1.1.0) - Added getResult method.
 - **30 Sept, 2022** (v1.0.0) - Added startPoll method.
 
