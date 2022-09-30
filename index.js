@@ -106,14 +106,14 @@ class DiscordPolls {
     });
 
     const usedEmojis = Object.keys(emojiInfo);
-    usedEmojis.push(forceEndPollEmoji);
+    usedEmojis.push(forceEndPollEmoji); // Add the forceEnd emoji to the usedEmojis
 
     const embed = new EmbedBuilder()
       .setTitle(`Poll - ${title}`)
       .setColor(embedColor)
       .setDescription(text)
       .setFooter({
-        text: `Poll created by ${interaction.user.tag} | ID: ${interaction.id}`,
+        text: `Poll created by ${interaction.user.tag}`,
       });
 
     const poll = await interaction.reply({ embeds: [embed], fetchReply: true });
@@ -173,10 +173,7 @@ class DiscordPolls {
       await poll.delete(); // Delete the poll message
       const embed = new EmbedBuilder()
         .setTitle(`Poll - ${title}`)
-        .setColor(embedColor)
-        .setFooter({
-          text: `Poll created by ${interaction.user.tag} | ID: ${interaction.id}`,
-        });
+        .setColor(embedColor);
 
       const votes = [];
       // Add the poll's result to the embed's fields
@@ -207,8 +204,54 @@ class DiscordPolls {
         )[0].option)
       );
 
-      await interaction.channel.send({ embeds: [embed] }); // Send a new message with the poll's results
+      const resultMessage = await interaction.channel.send({
+        embeds: [embed],
+        fetchReply: true,
+      }); // Send a new message with the poll's results
+      embed.setFooter({
+        text: `Poll created by ${interaction.user.tag} | ID: ${resultMessage.id}`,
+      });
+      resultMessage.edit({ embeds: [embed] });
+
+      return poll;
     });
+  }
+
+  /**
+   *
+   * @param {String} id - Discord message ID
+   * @param {Discord.Interaction} interaction - Discord Interaction
+   * @returns
+   */
+  static async getResult(id, interaction) {
+    // Error Embed Builder
+    const embedBuilderError = (error) =>
+      new EmbedBuilder().setColor("Red").setDescription(`**❌ - ${error}**`);
+
+    if (!id)
+      return interaction.reply({
+        embeds: [embedBuilderError("No ID was provided")],
+        ephemeral: true,
+      });
+
+    let resultsObject = {};
+    const results = {};
+    await interaction.channel.messages
+      .fetch(id)
+      .then((message) => {
+        const fields = message.embeds[0].fields;
+        fields.forEach(
+          (field) => (results[field.name] = Number(field.value.slice(1, 2)))
+        );
+        resultsObject = results;
+      })
+      .catch((error) =>
+        interaction.reply({
+          embeds: [embedBuilderError("Couldn't find message.")],
+          ephemeral: true,
+        })
+      );
+    return resultsObject;
   }
 }
 

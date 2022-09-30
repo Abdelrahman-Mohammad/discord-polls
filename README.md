@@ -3,8 +3,7 @@
 discord-polls is a powerfull npm package that lets you make a quick poll message in a channel. Based on discord.js-poll-embed
 
 <p align="center"><a href="https://nodei.co/npm/discord-polls/"><img src="https://nodei.co/npm/discord-polls.png"></a></p>
-<p align="center"><img src="https://img.shields.io/npm/v/discord-polls"> <img src="https://img.shields.io/github/repo-size/Abdelrahman-Mohammad/discord-polls"> <img src="https://img.shields.io/npm/l/discord-polls"> <img src="https://img.shields.io/github/contributors/Abdelrahman-Mohammad/discord-polls"> <img src="https://img.shields.io/github/package-json/dependency-version/Abdelrahman-Mohammad/discord-polls/mongoose">
-  <a href="https://discord.gg/rk7cVyk"><img src="https://discordapp.com/api/guilds/753938142246994031/widget.png" alt="Discord server"/></a></p>
+<p align="center"><img src="https://img.shields.io/npm/v/discord-polls"> <img src="https://img.shields.io/github/repo-size/Abdelrahman-Mohammad/discord-polls"> <img src="https://img.shields.io/npm/l/discord-polls"> <img src="https://img.shields.io/github/contributors/Abdelrahman-Mohammad/discord-polls"> <a href="https://discord.gg/rk7cVyk"><img src="https://discordapp.com/api/guilds/753938142246994031/widget.png" alt="Discord server"/></a></p>
 
 ![discord-polls picture](https://i.ibb.co/b7RXWBF/discord-polls-demo-final.png)
 
@@ -32,6 +31,7 @@ npm update discord-polls
 
 # Changelog
 
+- **30 Sept, 2022** (v1.1.0) - Added getResult method.
 - **30 Sept, 2022** (v1.0.0) - Added startPoll method.
 
 # Setting Up
@@ -60,6 +60,20 @@ Starts a new poll.
 
 ```js
 Polls.startPoll(<Interaction - Discord.Interaction>, <Title - String>, <Choices - Array>, <Duration - Number>, <EmbedColor - String>, <EmojiList - Array>, <ForceEndPollEmoji - String>);
+```
+
+- Output:
+
+```
+Discord.Message
+```
+
+### **getResult**
+
+Gets the result of a poll.
+
+```js
+Polls.getResult(<ID - String>, <Interaction - Discord.Interaction>);
 ```
 
 - Output:
