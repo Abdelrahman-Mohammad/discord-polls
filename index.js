@@ -97,7 +97,7 @@ class DiscordPolls {
     const date = new Date(new Date().getTime() + durationInMilliseconds);
     const relative = time(date, "R");
 
-    let text = `*To vote, react using the correspoding emoji.\nThe voting will end **${relative}**.\nPoll creater can end the poll **forcefully** by reacting to ${forceEndPollEmoji} emoji.*\n\n`;
+    let text = `*To vote, react using the correspoding emoji.\nThe voting will end **${relative}**.\nPoll creator can end the poll **forcefully** by reacting to ${forceEndPollEmoji} emoji.*\n\n`;
     const emojiInfo = {};
     choices.forEach((choice) => {
       const emoji = emojiList.splice(0, 1);
